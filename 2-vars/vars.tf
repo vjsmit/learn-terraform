@@ -38,7 +38,7 @@ variable "course_details" {
     DevOps = {
       name = "DevOps"
       timing = "10 PM"
-      duration = 90 days
+      duration = 90
     }
     Python = {
       name = "Python"
