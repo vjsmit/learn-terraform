@@ -13,3 +13,7 @@ output "sample" {
 output "sample1" {
   value = var.Sample1
 }
+
+output "sample_ext" {
+  value = "value of Sample is ${var.Sample}"
+}
