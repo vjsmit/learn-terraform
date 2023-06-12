@@ -34,5 +34,5 @@ output "movies" {
 }
 
 output "movie_detail" {
-  value = var.movie_details[Piku]
+  value = var.movie_details["Piku"]
 }
