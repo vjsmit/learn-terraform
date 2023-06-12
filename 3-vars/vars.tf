@@ -28,3 +28,7 @@ variable "movie_details" {
 output "movie" {
   value = var.movie
 }
+
+output "movies" {
+  value = var.movies[1]
+}
