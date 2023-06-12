@@ -32,3 +32,7 @@ output "movie" {
 output "movies" {
   value = var.movies[1]
 }
+
+output "movie_detail" {
+  value = var.movie_details[Piku]
+}
