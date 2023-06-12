@@ -36,10 +36,3 @@ output "movies" {
 output "movie_detail" {
   value = var.movie_details["lakshya"]
 }
-
-
-variable "env" {}
-
-output "env" {
-  value = var.env
-}
