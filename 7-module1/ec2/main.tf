@@ -3,18 +3,18 @@ resource "aws_instance" "web" {
   instance_type = "t3.micro"
   vpc_security_group_ids = [aws_security_group.sg.id]
   tags = {
-    Name = var.names
+    Name = var.name
   }
 }
 
 data "aws_ami" "example" {
   owners      = ["973714476881"]
   most_recent = true
-  names_regex  = "Centos-8-DevOps-Practice"
+  name_regex  = "Centos-8-DevOps-Practice"
 }
 
 resource "aws_security_group" "sg" {
-  names        = var.names
+  name        = var.name
   description = "Allow TLS inbound traffic"
 
   ingress {
@@ -34,8 +34,8 @@ resource "aws_security_group" "sg" {
   }
 
   tags = {
-    Name = var.names
+    Name = var.name
   }
 }
 
-variable "names" {}
+variable "name" {}
