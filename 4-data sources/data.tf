@@ -1,6 +1,6 @@
-provider "aws" {
-  region = "us-east-1"
-}
+#provider "aws" {
+#  region = "us-east-1"
+#}
 
 data "aws_ec2_spot_price" "example" {
   instance_type     = "t3.medium"
