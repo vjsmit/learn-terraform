@@ -1,12 +1,13 @@
 resource "aws_instance" "web" {
   ami = data.aws_ami.example.id
-  instance_type = "t3.micro"
+  instance_type = "t3.small"
   vpc_security_group_ids = [aws_security_group.sg.id]
   tags = {
-    Name = "Hello"
+    Name = test
   }
 
   provisioner "remote-exec" {
+
     connection {
       type     = "ssh"
       user     = "centos"
@@ -16,8 +17,7 @@ resource "aws_instance" "web" {
 
     inline = [
       "sudo labauto ansible",
-      "ansible-pull -i localhost, -U https://github.com/vjsmit/roboshop-ansible main.yml -e env=dev -e role_name=frontend"
-
+      "ansible-pull -i localhost, -U https://github.com/vjsmit/roboshop-ansible main.yml -e env=dev -e role_name=frontend",
     ]
   }
 }
@@ -29,14 +29,14 @@ data "aws_ami" "example" {
 }
 
 resource "aws_security_group" "sg" {
-  name        = "Hello"
+  name        = test1
   description = "Allow TLS inbound traffic"
 
   ingress {
     description      = "SSH"
-    from_port        = 22
-    to_port          = 22
-    protocol         = "tcp"
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
@@ -45,10 +45,9 @@ resource "aws_security_group" "sg" {
     to_port          = 0
     protocol         = "-1"
     cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
   }
 
   tags = {
-    Name = "Hello"
+    Name = test2
   }
 }
