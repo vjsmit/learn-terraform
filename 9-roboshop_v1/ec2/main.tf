@@ -37,7 +37,7 @@
   }
 
     resource "aws_security_group" "sg" {
-    name        = "Allow-All_V2"
+    name        = var.name
     description = "Allow TLS inbound traffic"
 
     ingress {
@@ -55,7 +55,7 @@
     }
 
     tags = {
-    Name = "Allow-All_V2"
+    Name = var.name
     }
   }
   variable "name" {}
