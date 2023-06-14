@@ -29,7 +29,7 @@ data "aws_ami" "example" {
 }
 
 resource "aws_security_group" "sg" {
-  name        = test
+  name        = "test1"
   description = "Allow TLS inbound traffic"
 
   ingress {
@@ -48,6 +48,6 @@ resource "aws_security_group" "sg" {
   }
 
   tags = {
-    Name = test
+    Name = "test2"
   }
 }
