@@ -55,7 +55,7 @@
     }
 
     tags = {
-    Name = Allow-All_V2
+    Name = "Allow-All_V2"
     }
   }
   variable "name" {}
