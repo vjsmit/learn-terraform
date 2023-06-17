@@ -31,6 +31,6 @@ output "classes" {
   value = var.classes.devops.topics
 }
 
-output "classes" {
-  value = var.classes[aws][topics]
-}
+#output "classes" {
+#  value = var.classes[aws][topics]
+#}
