@@ -36,5 +36,5 @@ output "DevOps_topics" {
 #  value = lookup(var.classes, "aws", null )
 #}
 output "aws_topics" {
-  value = lookup(lookup(var.classes, "aws", null), "name" , null)
+  value = lookup(lookup(var.classes, "aws", null), "time" , null)
 }
