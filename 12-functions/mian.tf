@@ -40,6 +40,19 @@ output "aws_topics" {
   value = lookup(lookup(var.classes, "aws", null), "topics" , "no topics found")
 }
 
+#Condition
+#output "aws_topics" {
+#  value = lookup(lookup(var.classes, "aws", null ), "topics", null) == null ? "No AWS training" : lookup(lookup(var.classes, "aws", null), "topics" , null)
+#}
+
 output "fruits_count" {
   value = element(var.fruits,3)
+}
+
+variable "a" {
+  default = 100
+}
+
+output "a" {
+  value = var.a > 50 ? "surplus" : "Less Quantity"
 }
