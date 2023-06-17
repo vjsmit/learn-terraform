@@ -41,5 +41,5 @@ output "aws_topics" {
 }
 
 output "fruits_count" {
-  value = element(var.fruits,3 )
+  value = element(var.fruits,3)
 }
