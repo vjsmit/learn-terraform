@@ -27,10 +27,10 @@ variable "classes" {
   }
 }
 
-output "classes" {
-  value = var.classes.devops.topics
-}
-
 #output "classes" {
-#  value = var.classes[aws][topics]
+#  value = var.classes.devops.topics
 #}
+
+output "classes" {
+  value = var.classes[aws][topics]
+}
