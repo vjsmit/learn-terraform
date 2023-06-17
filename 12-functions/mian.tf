@@ -35,6 +35,7 @@ output "DevOps_topics" {
 #output "aws_topics" {
 #  value = lookup(var.classes, "aws", null )
 #}
+
 output "aws_topics" {
   value = lookup(lookup(var.classes, "aws", null), "topics" , "no topics found")
 }
