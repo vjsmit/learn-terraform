@@ -1,12 +1,10 @@
 resource "aws_instance" "web" {
-  count = length(var.instances)
+  for_each = var.instances
   ami = data.aws_ami.example.id
   instance_type = "t3.micro"
 
   tags = {
-   # Name = var.instances[count.index]
-     #Name = element(var.instances, 0 ) Everyone will get frontend name
-     Name = element(var.instances, count.index )
+     Name = each.key
   }
 }
 
