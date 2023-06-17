@@ -50,7 +50,7 @@ output "fruits_count" {
 }
 
 variable "a" {
-  default = 100
+  default = 49
 }
 
 output "a" {
