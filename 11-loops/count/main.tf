@@ -4,7 +4,8 @@ resource "aws_instance" "web" {
   instance_type = "t3.micro"
 
   tags = {
-    Name = var.instances[count.index]
+   # Name = var.instances[count.index]
+     Name = element(var.instances, 0 )
   }
 }
 
