@@ -23,6 +23,7 @@ variable "classes" {
     }
     aws = {
       name = "aws"
+      time = "7 PM"
     }
   }
 }
